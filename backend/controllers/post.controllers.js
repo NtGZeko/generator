@@ -10,6 +10,7 @@ module.exports.setPosts = async (req, res) => {
     res.status(400).json({ excuse: 'Bad request' });
   }
   const post = await PostModel.create({
+    tag: req.body.tag,
     excuse: req.body.excuse,
   });
   res.status(200).json(post);

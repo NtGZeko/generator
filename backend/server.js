@@ -19,6 +19,9 @@ app.get('/', (req, res) => {
 });
 app.use('/post', require('./routes/post.routes'));
 
+app.use((req, res, next) => {
+  res.status(404).sendFile(path.join(__dirname, '../frontend/error.html'));
+});
 // Lunch the server
 
 app.listen(port, () => console.log('Server is running on port ' + port));

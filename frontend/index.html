@@ -19,7 +19,7 @@
       res.json().then((data) => {
         console.log(data);
         document.querySelector('#excuse').innerHTML =
-          data[Math.floor(Math.random() * data.length)].excuse;
+          data[Math.floor(Math.random() * data.length)].message;
       })
     );
     const refreshButton = document.querySelector('#refresh-button');

@@ -5,6 +5,7 @@ const dotenv = require('dotenv').config();
 const port = 5000;
 const cors = require('cors');
 const path = require('path');
+
 // connectDB
 connectDB();
 
@@ -18,10 +19,13 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 app.use('/post', require('./routes/post.routes'));
-
+app.get('/lost', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/lost.html'));
+});
 app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, '../frontend/error.html'));
 });
+
 // Lunch the server
 
 app.listen(port, () => console.log('Server is running on port ' + port));

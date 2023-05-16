@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="refresh" content="5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="counter">
+      <h1>i’m lost</h1>
+      <img
+        src="https://media.giphy.com/media/9Y1wF3wx1Dex8w9wxL/giphy.gif"
+        alt="gif"
+      />
+      <h2></h2>
+    </section>
+  </body>
+  <script>
+    let counter = document.querySelector('h2');
+    let count = 5;
+    setInterval(() => {
+      count--;
+      counter.innerHTML = count;
+      if (count === 0) {
+        location.href = 'http://localhost:5000/';
+      }
+    }, 1000);
+  </script>
+</html>

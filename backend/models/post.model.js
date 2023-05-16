@@ -1,11 +1,15 @@
 const mongoose = require('mongoose');
 
 const postSchema = mongoose.Schema({
-  tag: {
+  http_code: {
     type: Number,
-    required: true,
+    required: false,
   },
-  excuse: {
+  tag: {
+    type: String,
+    required: false,
+  },
+  message: {
     type: String,
     required: true,
   },

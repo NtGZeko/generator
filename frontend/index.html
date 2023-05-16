@@ -14,5 +14,19 @@
     </header>
     <button id="refresh-button">Refresh!</button>
   </body>
-  <script src="myscripts.js"></script>
+  <script>
+    fetch(`http://localhost:5000/post`).then((res) =>
+      res.json().then((data) => {
+        console.log(data);
+        document.querySelector('#excuse').innerHTML =
+          data[Math.floor(Math.random() * data.length)].message;
+      })
+    );
+    const refreshButton = document.querySelector('#refresh-button');
+    const refreshPage = () => {
+      location.reload();
+    };
+
+    refreshButton.addEventListener('click', refreshPage);
+  </script>
 </html>

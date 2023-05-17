@@ -8,25 +8,23 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1>Excuses de Dev</h1>
-      <h2 id="excuse"></h2>
-    </header>
+    <h1>Excuses de Dev</h1>
+    <h2 id="excuse"></h2>
     <button id="refresh-button">Refresh!</button>
-  </body>
-  <script>
-    fetch(`http://localhost:5000/post`).then((res) =>
-      res.json().then((data) => {
-        console.log(data);
-        document.querySelector('#excuse').innerHTML =
-          data[Math.floor(Math.random() * data.length)].message;
-      })
-    );
-    const refreshButton = document.querySelector('#refresh-button');
-    const refreshPage = () => {
-      location.reload();
-    };
+      <button id="myBtn">Open Modal</button>
+  <div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    
+    <form class="form">
+      <input name="message" type="text" placeholder="Entre votre excuse">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 
-    refreshButton.addEventListener('click', refreshPage);
-  </script>
+</div>
+    </footer>
+  </body>
+  <script src="myscripts.js"></script>
 </html>

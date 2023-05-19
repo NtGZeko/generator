@@ -12,12 +12,15 @@ connectDB();
 const app = express();
 
 // Middleware
+app.use(express.static(path.join(__dirname, '../frontend')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-app.get('/', (req, res) => {
+
+app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
+
 app.use('/post', require('./routes/post.routes'));
 app.get('/lost', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/lost.html'));

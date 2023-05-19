@@ -26,6 +26,7 @@ window.onclick = function (event) {
     modal.style.display = 'none';
   }
 };
+
 // formulaire
 
 const formEl = document.querySelector('.form');
@@ -42,15 +43,3 @@ formEl.addEventListener('submit', () => {
     .then((data) => console.log(data))
     .catch((err) => console.log(err));
 });
-
-// fetch(`http://localhost:5000/post`, {
-//   method: 'POST',
-//   body: JSON.stringify({
-//     message: 'test',
-//   }),
-//   headers: {
-//     'Content-Type': 'application/json; charset=UTF-8',
-//   },
-// })
-//   .then((response) => response.json())
-//   .then((json) => console.log(json));

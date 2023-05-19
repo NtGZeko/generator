@@ -1,7 +1,13 @@
 body {
   background-color: aquamarine;
 }
-
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
 .modal {
   display: none;
   position: fixed;
@@ -14,13 +20,19 @@ body {
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
 }
-
+.error {
+  font-size: 5rem;
+}
+button {
+  width: 8vw;
+}
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 40%;
+  height: 40%;
 }
 /* The Close Button */
 .close {
@@ -35,4 +47,31 @@ body {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+.form {
+  height: 100%;
+}
+input::placeholder {
+  width: 20vw;
+  height: 20vh;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-size: 3rem;
+}
+.fade-in {
+  animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
